@@ -1,12 +1,22 @@
 import './App.css'
 import MovieCard from './components/moviecard'
+import Home from './pages/Home';
+import { Routes,Route } from 'react-router-dom';
+import Favourites from './pages/Favourites';
+import NavBar from './components/NavBar';
 function App() {
- 
+  let movienumber=1;
+    
   return (
-  <>
-  <MovieCard movie={{title: "peter Pan", release_date:"26-11-2001"}}/>
-  <MovieCard movie={{title: "Avatar", release_date:"15-10-2009"}}/>
-   </>
+   <div>
+   <NavBar/>
+   <main className='main-content'>
+    <Routes>
+      <Route path='/' element={<Home/>}/>
+      <Route path='/Favourites' element={<Favourites/>}/>
+    </Routes>
+   </main>
+   </div>
   )
 }
 
